@@ -7,7 +7,7 @@
 
 import Foundation
 protocol FetchService{
-    func fetch(query:String) async throws -> [QuoteObject]
+    func fetch() async throws -> [QuoteObject]
 }
 class FetcherObject:FetchService {
     
@@ -18,7 +18,7 @@ class FetcherObject:FetchService {
     }
     
 
-    func fetch(query:String = "Devops") async throws -> [QuoteObject] {
+    func fetch() async throws -> [QuoteObject] {
 
         guard let url = URL(string:"https://animechan.vercel.app/api/quotes")
                 

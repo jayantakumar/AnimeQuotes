@@ -19,7 +19,7 @@ class QuoteQueryManager:ObservableObject {
       
       func getQueryObject() async {
           do{
-              self.queryList = try await fetcherObject.fetch(query:"tmux")
+              self.queryList = try await fetcherObject.fetch()
           }
           catch{
               print(error)
