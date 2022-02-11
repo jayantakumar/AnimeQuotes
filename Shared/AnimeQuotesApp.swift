@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct AnimeQuotesApp: App {
+    @StateObject private var animeFetcher = QuoteQueryManager(fetcherObject: FetcherObject())
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(animeFetcher)
         }
     }
 }
